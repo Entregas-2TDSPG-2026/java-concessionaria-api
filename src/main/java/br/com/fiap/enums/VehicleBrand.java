@@ -1,4 +1,4 @@
-package br.com.fiap.domain.models.enums;
+package br.com.fiap.enums;
 
 public enum VehicleBrand {
 

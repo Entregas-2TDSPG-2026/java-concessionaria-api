@@ -1,0 +1,52 @@
+package br.com.fiap.controllers;
+
+import br.com.fiap.domain.models.Vehicle;
+import br.com.fiap.services.VehicleService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+
+@RestController
+@RequestMapping("/vehicles")
+@Slf4j
+public class VehicleController {
+
+    @Autowired
+    private VehicleService service;
+
+    @GetMapping
+    public List<Vehicle> listAll(){
+        return service.getAllVehicle();
+    }
+
+    @PostMapping
+    public ResponseEntity<Vehicle> createCar(@RequestBody Vehicle vehicle){
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(service.addVehicle(vehicle));
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Vehicle> getVehicleById(@PathVariable Long id) {
+        log.info("Getting vehicle {}", id);
+        return ResponseEntity.ok(service.getVehicleById(id));
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteVehicle(@PathVariable Long id){
+        log.info("Deleting vehicle {}", id);
+        service.deleteVehicle(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Vehicle> updateVehicle(@PathVariable Long id, @RequestBody Vehicle vehicle) {
+        log.info("Updating vehicle {} with data {}", id, vehicle);
+        return ResponseEntity.ok(service.updateVehicle(id, vehicle));
+    }
+}

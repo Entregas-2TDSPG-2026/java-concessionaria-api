@@ -1,7 +1,7 @@
 package br.com.fiap.domain.models;
 
-import br.com.fiap.domain.models.enums.VehicleColor;
-import br.com.fiap.domain.models.enums.VehicleBrand;
+import br.com.fiap.enums.VehicleColor;
+import br.com.fiap.enums.VehicleBrand;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -9,8 +9,8 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "cars")
-public class Car {
+@Table(name = "vehicles")
+public class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ public class Car {
 
     private String model;
     private String version;
-    private Integer year;
+    private Integer vehicleYear;
     private BigDecimal price;
     private Integer mileage;
 
