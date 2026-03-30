@@ -1,7 +1,7 @@
 package br.com.fiap.services;
 
 import br.com.fiap.dtos.SaleRequest;
-import br.com.fiap.enums.VehicleStatus;
+import br.com.fiap.models.enums.VehicleStatus;
 import br.com.fiap.models.Sale;
 import br.com.fiap.repositories.SaleRepository;
 import br.com.fiap.repositories.VehicleRepository;
@@ -36,7 +36,7 @@ public class SaleService {
 
     public Sale create(SaleRequest request) {
         var vehicle = vehicleRepository.findById(request.vehicleId())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Vehicle not found"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Veiculo não existe"));
 
         if (vehicle.getStatus() != VehicleStatus.DISPONIVEL) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Vehicle is not available for sale");

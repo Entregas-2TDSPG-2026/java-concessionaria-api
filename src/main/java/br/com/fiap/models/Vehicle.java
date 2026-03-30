@@ -1,10 +1,10 @@
 package br.com.fiap.models;
 
-import br.com.fiap.enums.CarBrand;
-import br.com.fiap.enums.MotorcycleBrand;
-import br.com.fiap.enums.VehicleColor;
-import br.com.fiap.enums.VehicleStatus;
-import br.com.fiap.enums.VehicleType;
+import br.com.fiap.models.enums.CarBrand;
+import br.com.fiap.models.enums.MotorcycleBrand;
+import br.com.fiap.models.enums.VehicleColor;
+import br.com.fiap.models.enums.VehicleStatus;
+import br.com.fiap.models.enums.VehicleType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

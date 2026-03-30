@@ -1,4 +1,4 @@
-package br.com.fiap.enums;
+package br.com.fiap.models.enums;
 
 public enum VehicleStatus {
     DISPONIVEL,
