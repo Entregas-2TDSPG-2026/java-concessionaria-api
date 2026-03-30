@@ -1,9 +1,9 @@
 package br.com.fiap.repositories;
 
-import br.com.fiap.models.Vehicle;
+import br.com.fiap.models.Sale;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
+public interface SaleRepository extends JpaRepository <Sale, Long>{
 }

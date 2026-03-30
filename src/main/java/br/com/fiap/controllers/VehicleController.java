@@ -1,6 +1,6 @@
 package br.com.fiap.controllers;
 
-import br.com.fiap.domain.models.Vehicle;
+import br.com.fiap.models.Vehicle;
 import br.com.fiap.services.VehicleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

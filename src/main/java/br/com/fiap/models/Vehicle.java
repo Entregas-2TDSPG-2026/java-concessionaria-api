@@ -1,4 +1,4 @@
-package br.com.fiap.domain.models;
+package br.com.fiap.models;
 
 import br.com.fiap.enums.CarBrand;
 import br.com.fiap.enums.MotorcycleBrand;

@@ -1,6 +1,6 @@
 package br.com.fiap.services;
 
-import br.com.fiap.domain.models.Vehicle;
+import br.com.fiap.models.Vehicle;
 import br.com.fiap.repositories.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
